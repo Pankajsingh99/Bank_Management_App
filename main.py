@@ -1,5 +1,7 @@
+#establishing Connection with Mysql Server
 import mysql.connector as a
 con=a.connect(host='localhost',user='root',password='Mysql@99',database='bank',auth_plugin='mysql_native_password')
+#A function for opening account
 def openAcc():
     n=input("enter name:")
     ac=input("enter account no :")
@@ -17,7 +19,7 @@ def openAcc():
     con.commit()
     print('data entered successfully')
     main()
-
+#A function for deposit amount
 def depoamo():
     am=int(input("enter amount:"))
     ac=input('enter account no:')
@@ -32,7 +34,7 @@ def depoamo():
     c.execute(sql,d)
     con.commit()
     main()
-
+#A function for withdraw amount
 def witham():
     am=int(input('input amount:'))
     ac=input('enter account no:')
@@ -47,7 +49,7 @@ def witham():
     c.execute(sql,d)
     con.commit()
     main()
-
+#to check balance
 def balance():
     ac=input('enter account no :')
     a="select balance from amount where acno=%s"
@@ -57,7 +59,7 @@ def balance():
     myresult=c.fetchone()
     print("balance for account:",ac,"is",myresult[0])
     main()
-
+#to display account details
 def dispacc():
     ac=input("enter account no:")
     a="select * from account where acno=%s"
@@ -68,7 +70,7 @@ def dispacc():
     for i in myresult:
         print(i,end=' ')
     main()
-
+#to close account
 def closeac():
     ac=input("enter accoun no:")
     sql1="delete from account where acno=%s"
@@ -106,5 +108,5 @@ def main():
         else :
             print("wrong choice")
             main()
-main()
+main()  #calling main function
 
