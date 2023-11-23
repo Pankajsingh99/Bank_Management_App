@@ -1,6 +1,6 @@
 #establishing Connection with Mysql Server
 import mysql.connector as a
-con=a.connect(host='localhost',user='root',password='Mysql@99',database='bank',auth_plugin='mysql_native_password')
+con=a.connect(host='localhost',user='root',password='###',database='bank',auth_plugin='mysql_native_password')
 #A function for opening account
 def openAcc():
     n=input("enter name:")
